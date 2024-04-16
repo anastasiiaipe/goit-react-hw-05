@@ -12,9 +12,12 @@
   color: red;
   cursor: pointer;
   display: flex;
-  align-self: center;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 20px;
+
   padding: 8px 14px;
+  width: 100px;
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
