@@ -1,4 +1,4 @@
-.headerList {
+.navList {
   display: flex;
   gap: 20px;
   justify-content: center;
@@ -7,9 +7,9 @@
 .link {
   appearance: none;
   background-color: transparent;
-  border: 2px solid red;
+  border: 2px solid rgb(128, 0, 255);
   border-radius: 0.6em;
-  color: red;
+  color: rgb(128, 0, 255);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -24,15 +24,16 @@
   font-weight: 700;
 
   &:hover,
-  &:focus {
-    color: #fff;
+  &:active {
+    color: #090909;
+    border-color: #090909;
     outline: 0;
   }
 }
 
-.isActive {
+/* .isActive {
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
   &:focus {
-    box-shadow: 0 0 40px 40px red inset;
+    box-shadow: 0 0 40px 40px rgba(128, 0, 255, 0.496) inset;
   }
-}
+} */

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { fetchTrendingMovies } from "../../service/movies-api";
+import { fetchTrendingMovies } from "../service/movies-api";
 import toast, { Toaster } from "react-hot-toast";
-import Loader from "../../components/Loader/Loader";
+import Loader from "../components/Loader/Loader";
+import MovieList from "../components/MovieList/MovieList";
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -16,7 +17,7 @@ const HomePage = () => {
         setMovies(trendingMovies);
       } catch (error) {
         setError(true);
-        toast.error("Error fetching movies. Please try again later.");
+        toast.error("Error fetching trending movies. Please try again later.");
       } finally {
         setLoading(false);
       }
@@ -27,8 +28,10 @@ const HomePage = () => {
 
   return (
     <>
-      <Loader loading={loading} />
-      {/* <Toaster position="bottom-center" reverseOrder={false} />; */}
+      <h1>Trending Movies</h1>
+      {loading && <Loader />}
+      {error && <Toaster position="bottom-center" reverseOrder={false} />}
+      <MovieList movies={movies} />
     </>
   );
 };

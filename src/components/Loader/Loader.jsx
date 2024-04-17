@@ -1,21 +1,19 @@
 import style from "./Loader.module.css";
 import { ThreeCircles } from "react-loader-spinner";
 
-const Loader = ({ loading }) => {
+const Loader = () => {
   return (
-    loading && (
-      <div className={style.loaderBox}>
-        <ThreeCircles
-          visible={loading}
-          height="100"
-          width="100"
-          color="red"
-          ariaLabel="three-circles-loading"
-          wrapperStyle={{}}
-          wrapperClass=""
-        />
-      </div>
-    )
+    <div className={style.loaderBox}>
+      <ThreeCircles
+        visible="true"
+        height="100"
+        width="100"
+        color="rgba(128, 0, 255, 0.496)"
+        ariaLabel="three-circles-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+      />
+    </div>
   );
 };
 export default Loader;
