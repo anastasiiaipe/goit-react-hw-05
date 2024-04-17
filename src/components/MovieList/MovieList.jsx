@@ -10,7 +10,7 @@ const MovieList = ({ movies }) => {
         const urlImage = `https://image.tmdb.org/t/p/w500${poster_path}`;
         return (
           <div key={id} className={style.movieList}>
-            <Link to={`/movies/${id}`} state={location}>
+            <Link state={location} to={`/movies/${id}`}>
               <img
                 src={poster_path ? urlImage : defaultImg}
                 width={250}

@@ -4,6 +4,8 @@ import { movieCredits } from "../../service/movies-api";
 import toast, { Toaster } from "react-hot-toast";
 import Loader from "../Loader/Loader";
 
+import style from "./MovieCast.module.css";
+
 const MovieCast = () => {
   const { movieId } = useParams();
   const [cast, setCast] = useState([]);
@@ -33,13 +35,13 @@ const MovieCast = () => {
   return (
     <>
       {loading && <Loader />}
-      <Toaster position="bottom-center" reverseOrder={false} />
-      <ul>
+      {error && <Toaster position="bottom-center" reverseOrder={false} />}
+      <ul className={style.castList}>
         {cast.map(({ id, original_name, profile_path, character }) => {
           const urlImage = `https://image.tmdb.org/t/p/w500${profile_path}`;
 
           return (
-            <li key={id}>
+            <li key={id} className={style.castItem}>
               <img
                 src={profile_path ? urlImage : defaultActorImg}
                 width={250}
