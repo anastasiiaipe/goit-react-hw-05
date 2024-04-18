@@ -31,7 +31,6 @@ const MovieDetailsPage = () => {
       try {
         const movieData = await movieDetails(movieId);
         setMovies(movieData);
-        console.log(movieData);
         setImageUrl(`https://image.tmdb.org/t/p/w500${movieData.poster_path}`);
       } catch (error) {
         setError(true);

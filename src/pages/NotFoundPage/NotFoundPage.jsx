@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
-import HomePage from "./HomePage";
 
 const NotFoundPage = () => {
   return (
     <div>
-      <Link to="/">
-        <HomePage />
-      </Link>
+      <Link to="/">Go back</Link>
+      <p>Not found page</p>
     </div>
   );
 };

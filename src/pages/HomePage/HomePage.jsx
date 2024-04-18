@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { fetchTrendingMovies } from "../service/movies-api";
+import { fetchTrendingMovies } from "../../service/movies-api";
 import toast, { Toaster } from "react-hot-toast";
-import Loader from "../components/Loader/Loader";
-import MovieList from "../components/MovieList/MovieList";
+import Loader from "../../components/Loader/Loader";
+import MovieList from "../../components/MovieList/MovieList";
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
